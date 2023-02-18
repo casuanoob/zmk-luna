@@ -84,7 +84,7 @@
             bindings = <
                &trans   &trans        &trans       &trans    &trans      &trans       &out OUT_USB   &out OUT_BLE   &out OUT_TOG   &bootloader
                &trans   &kp C_VOL_DN  &kp C_VOL_UP &trans    &trans      &bt BT_CLR   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
-                        &kp C_BRI_DEC &kp C_BRI_UP &kp F11                            &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG
+                        &kp C_BRI_DEC &kp C_BRI_UP &trans                             &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG
                                                    &trans    &trans      &trans       &trans
             >;
         };
