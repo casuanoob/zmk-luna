@@ -16,13 +16,13 @@
 #define NUM  3
 #define SPEC 4
 
-#define CTRL_TAB (LC(TAB))
-#define C_S_TAB (LC(LS(TAB)))
+#define CTRL_TAB LC(TAB)
+#define C_S_TAB LC(LS(TAB))
 
-#define SPC_PREVIOUS (LC(LG(LEFT)))
+#define SPC_PREVIOUS LC(LG(LEFT))
 #define S_PRV SPC_PREVIOUS
 
-#define SPC_NEXT (LC(LG(RIGHT)))
+#define SPC_NEXT LC(LG(RIGHT))
 #define S_NXT SPC_NEXT
 
 &caps_word {
