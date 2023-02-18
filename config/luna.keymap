@@ -54,7 +54,7 @@
             bindings = <
                &kp S_PRV   &kp C_S_TAB  &kp TAB      &kp CTRL_TAB  &S_NXT         &kp PG_UP &kp HOME   &kp UP     &kp END      &kp DEL
                &sk LGUI    &sk LALT     &sk LCTL     &sk LSHIFT    &trans         &kp PG_DN &kp LEFT   &kp DOWN   &kp RIGHT    &kp RET
-                           &kp LC(X)    &kp LC(C)    &kp LC(V)                              &kp BSPC   &trans     &kp trans
+                           &kp LC(X)    &kp LC(C)    &kp LC(V)                              &kp BSPC   &trans     &trans
                                                        &trans      &mo SPEC       &kp ESC    &trans
             >;
         };
