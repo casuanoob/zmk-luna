@@ -10,12 +10,13 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define NAV  1
-#define SYM  2
-#define NUM  3
-#define FUN  4
-#define SPEC 5
+#define BASE  0
+#define NAV   1
+#define SYM   2
+#define NUM   3
+#define NUMPD 4
+#define FUN   5
+#define SPEC  6
 
 #define CTRL_TAB LC(TAB)
 #define C_S_TAB LC(LS(TAB))
@@ -32,6 +33,14 @@
 
 &sk {
   quick-release;
+};
+
+conditional_layers {
+  compatible = "zmk,conditional-layers";
+  tri_layer {
+    if-layers = <NAV SYM>;
+    then-layer = <NUM>;
+  };
 };
 
 / {
@@ -56,7 +65,7 @@
                &kp S_PRV   &kp C_S_TAB  &kp TAB      &kp CTRL_TAB  &kp S_NXT      &kp PG_UP &kp HOME   &kp UP     &kp END      &kp DEL
                &sk LGUI    &sk LALT     &sk LCTL     &sk LSHFT     &trans         &kp PG_DN &kp LEFT   &kp DOWN   &kp RIGHT    &kp RET
                            &kp LC(X)    &kp LC(C)    &kp LC(V)                              &kp BSPC   &trans     &trans
-                                                       &trans      &mo SPEC       &kp ESC   &trans
+                                                     &trans        &mo SPEC       &kp ESC   &trans
             >;
         };
 
@@ -66,17 +75,27 @@
                &kp GRAVE  &kp PRCNT   &kp QMARK   &kp COLON   &kp AT         &kp CARET   &kp SEMI    &kp LPAR   &kp RPAR   &kp TILDE
                &kp EXCL   &kp PLUS    &kp MINUS   &kp EQUAL   &kp HASH       &kp UNDER   &sk LSHFT   &sk LCTL   &sk LALT   &sk LGUI 
                           &kp DLLR    &kp ASTRK   &kp FSLH                               &kp BSLH    &kp PIPE   &kp AMPS
-                                                   &trans     &kp ESC        &mo SPEC    &trans
+                                                  &trans      &kp ESC        &mo SPEC    &trans
             >;
         };
 
         num_layer {
             label = "Numbers";
             bindings = <
-                &trans    &kp N7      &kp N8      &kp N9       &trans        &kp KP_ASTERISK &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS
+                &trans  &kp N7  &kp N8  &kp N9  &none         &none   &kp EQUAL  &kp LT    &kp GT    &none
+                &none   &kp N4  &kp N5  &kp N6  &none         &none   &sk LSHFT  &sk LCTL  &sk LALT  &sk LGUI
+                        &kp N1  &kp N2  &kp N3                        &kp N0     &kp LBKT  &kp RBKT
+                                        &trans  &trans        &trans  &trans
+            >;
+        };
+
+        numpd_layer {
+            label = "NumPad";
+            bindings = <
+                &trans    &kp N7      &kp N8      &kp N9       &none         &kp KP_ASTERISK &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS
                 &kp LGUI  &mt LALT N4 &mt LCTL N5 &mt LSHFT N6 &kp N0        &kp KP_SLASH    &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS
                           &kp N1      &kp N2      &kp N3                                     &kp KP_N1   &kp KP_N2   &kp KP_N3
-                                                  &trans       &trans        &kp KP_N0       &kp KP_DOT
+                                                  &trans       &trans        &kp KP_DOT      &kp KP_N0
             >;
         };
 
@@ -84,7 +103,7 @@
             label = "F-keys";
             bindings = <
                &kp F12    &kp F7    &kp F8   &kp F9   &kp F10        &kp KP_NUM  &kp INS     &kp PSCRN  &kp SLCK   &kp PAUSE_BREAK
-               &kp F11    &kp F4    &kp F5   &kp F6   &kp K_APP      &none       &mo LSHFT   &mo LCTL   &mo LALT   &mo LGUI
+               &kp F11    &kp F4    &kp F5   &kp F6   &kp K_APP      &none       &sk LSHFT   &sk LCTL   &sk LALT   &sk LGUI
                           &kp F1    &kp F2   &kp F3                              &none       &none      &none
                                              &trans   &kp ESC        &trans      &trans
             >;
