@@ -84,7 +84,7 @@
             label = "F-keys";
             bindings = <
                &kp F12    &kp F7    &kp F8   &kp F9   &kp F10        &kp KP_NUM  &kp INS     &kp PSCRN  &kp SLCK   &kp PAUSE_BREAK
-               &kp F11    &kp F4    &kp F5   &kp F6   &kp APP        &none       &mo LSHFT   &mo LCTL   &mo LALT   &mo LGUI
+               &kp F11    &kp F4    &kp F5   &kp F6   &kp K_APP      &none       &mo LSHFT   &mo LCTL   &mo LALT   &mo LGUI
                           &kp F1    &kp F2   &kp F3                              &none       &none      &none
                                              &trans   &kp ESC        &trans      &trans
             >;
