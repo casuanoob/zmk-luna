@@ -123,8 +123,8 @@
        spec_layer {
             label = "Settings";
             bindings = <
-               &bootloader &none         &none        &none   &to GAME    &none      &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &bootloader
-               &none       &kp C_VOL_DN  &kp C_VOL_UP &none   &to BASE    &bt BT_CLR &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+               &bootloader &reset        &none        &none   &to BASE    &none      &out OUT_USB  &out OUT_BLE  &reset        &bootloader
+               &none       &kp C_VOL_DN  &kp C_VOL_UP &none   &to GAME    &bt BT_CLR &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
                            &kp C_BRI_DEC &kp C_BRI_UP &none                          &none         &none         &none
                                                       &trans  &trans      &trans     &trans
             >;
